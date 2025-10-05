@@ -1,0 +1,57 @@
+@media print {
+    /* Remove all page margins */
+    @page {
+        margin: 0 !important;
+        size: A4;
+    }
+    
+    /* Reset body margins */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Hide everything except the document */
+    body * {
+        visibility: hidden;
+    }
+    
+    .print-hidden {
+        display: none !important;
+    }
+    
+    /* Show only the document */
+    .print-document,
+    .print-document * {
+        visibility: visible;
+    }
+    
+    /* Make document fill entire page but keep aspect ratio */
+    .print-document {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        width: 100vw !important;
+        height: 133.33vw !important; /* 4:3 aspect ratio */
+        max-height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: white !important;
+        transform: translate(-50%, -50%) !important;
+    }
+    
+    /* Keep overlay positioning exactly the same */
+    .print-document .absolute {
+        position: absolute !important;
+        transform: translate(-50%, -50%) !important;
+    }
+    
+    /* Ensure image fills container */
+    .print-document img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Bulgarian date format styling */
+input[type="date"] {
+    color-scheme: light;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Force Bulgarian locale for date inputs */
+input[type="date"][lang="bg"] {
+    direction: ltr;
+}
